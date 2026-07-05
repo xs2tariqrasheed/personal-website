@@ -7,6 +7,13 @@
       "runtimeArgs": ["start"],
       "port": 3456,
       "autoPort": true
+    },
+    {
+      "name": "personal-website-dev",
+      "runtimeExecutable": "./node_modules/.bin/next",
+      "runtimeArgs": ["dev"],
+      "port": 3457,
+      "autoPort": true
     }
   ]
 }
