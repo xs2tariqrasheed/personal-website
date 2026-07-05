@@ -1,0 +1,189 @@
+{
+  "personal": {
+    "name": "Tariq Rasheed",
+    "title": "Fullstack Engineer · AI Systems",
+    "tagline": "I build production-grade web apps and AI agents.",
+    "bio": "Fullstack engineer with experience across React, Node.js, and Python, specializing in AI-powered products — autonomous agents, RAG pipelines, and LLM orchestration with LangChain and LangGraph. I care about shipping reliable systems that solve real problems.",
+    "shortBio": "Fullstack & AI engineer — React, Node, Python, LangChain, LangGraph.",
+    "email": "xs2tariqrasheed@gmail.com",
+    "location": "Remote",
+    "siteUrl": "https://example.com",
+    "resumeUrl": null,
+    "socials": [
+      { "label": "GitHub", "url": "https://github.com/your-username" },
+      { "label": "LinkedIn", "url": "https://linkedin.com/in/your-username" },
+      { "label": "X", "url": "https://x.com/your-username" }
+    ]
+  },
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Python", "FastAPI", "Express", "PostgreSQL", "Redis"]
+    },
+    {
+      "category": "AI / ML",
+      "items": ["AI Agents", "RAG", "LangChain", "LangGraph", "OpenAI & Anthropic APIs", "Vector Databases"]
+    },
+    {
+      "category": "Infrastructure",
+      "items": ["Docker", "AWS", "CI/CD", "Vercel", "Kubernetes"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Acme AI (dummy)",
+      "role": "Senior Fullstack Engineer",
+      "start": "2023-04",
+      "end": null,
+      "location": "Remote",
+      "summary": "Lead engineer on the agent platform team, building multi-agent systems for enterprise customers.",
+      "highlights": [
+        "Designed and shipped a multi-agent orchestration service with LangGraph serving 50k requests/day",
+        "Cut RAG pipeline latency by 40% by reworking chunking, embedding, and retrieval strategies",
+        "Mentored a team of 4 engineers and established code review and testing practices"
+      ],
+      "tech": ["Next.js", "Python", "LangGraph", "PostgreSQL", "AWS"]
+    },
+    {
+      "company": "TechCorp (dummy)",
+      "role": "Fullstack Engineer",
+      "start": "2021-01",
+      "end": "2023-03",
+      "location": "Remote",
+      "summary": "Built customer-facing web applications and internal tooling for a B2B SaaS platform.",
+      "highlights": [
+        "Rebuilt the customer dashboard in React and Next.js, improving page load times by 60%",
+        "Developed a document Q&A feature using RAG with LangChain and a vector database",
+        "Owned the Node.js billing service processing $2M+ in monthly transactions"
+      ],
+      "tech": ["React", "Node.js", "LangChain", "MongoDB", "Docker"]
+    },
+    {
+      "company": "StartupXYZ (dummy)",
+      "role": "Software Engineer",
+      "start": "2019-06",
+      "end": "2020-12",
+      "location": "On-site",
+      "summary": "Early engineer at a fast-moving startup, working across the entire stack.",
+      "highlights": [
+        "Shipped the MVP web app from scratch with React and Express",
+        "Built REST APIs and data pipelines in Python",
+        "Set up CI/CD and automated testing from zero"
+      ],
+      "tech": ["React", "Express", "Python", "PostgreSQL"]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "agent-orchestrator",
+      "name": "Agent Orchestrator (dummy)",
+      "description": "Open-source framework for composing tool-using LLM agents with human-in-the-loop checkpoints, built on LangGraph.",
+      "tech": ["Python", "LangGraph", "FastAPI"],
+      "links": {
+        "github": "https://github.com/your-username/agent-orchestrator",
+        "live": "https://agents.example.com"
+      },
+      "featured": true
+    },
+    {
+      "slug": "docs-rag-chat",
+      "name": "Docs RAG Chat (dummy)",
+      "description": "Chat with any documentation site — a RAG pipeline with smart chunking, hybrid search, and cited answers.",
+      "tech": ["Next.js", "LangChain", "Pinecone", "OpenAI"],
+      "links": {
+        "github": "https://github.com/your-username/docs-rag-chat",
+        "live": "https://docsrag.example.com"
+      },
+      "featured": true
+    },
+    {
+      "slug": "devflow",
+      "name": "DevFlow (dummy)",
+      "description": "A developer productivity dashboard aggregating GitHub, CI, and deployment status into a single real-time view.",
+      "tech": ["React", "Node.js", "WebSockets", "Redis"],
+      "links": {
+        "github": "https://github.com/your-username/devflow"
+      },
+      "featured": true
+    },
+    {
+      "slug": "prompt-lab",
+      "name": "Prompt Lab (dummy)",
+      "description": "A/B testing playground for LLM prompts with automatic evaluation and cost tracking across providers.",
+      "tech": ["Next.js", "Python", "Anthropic API"],
+      "links": {
+        "github": "https://github.com/your-username/prompt-lab"
+      },
+      "featured": false
+    },
+    {
+      "slug": "taskpilot",
+      "name": "TaskPilot (dummy)",
+      "description": "An AI agent that triages your issue tracker — labels, prioritizes, and drafts responses using a multi-step LangGraph workflow.",
+      "tech": ["Python", "LangGraph", "GitHub API"],
+      "links": {
+        "github": "https://github.com/your-username/taskpilot",
+        "live": "https://taskpilot.example.com"
+      },
+      "featured": false
+    },
+    {
+      "slug": "realtime-collab",
+      "name": "Realtime Collab (dummy)",
+      "description": "Collaborative whiteboard with CRDT-based sync, presence indicators, and offline support.",
+      "tech": ["React", "TypeScript", "Yjs", "Node.js"],
+      "links": {
+        "github": "https://github.com/your-username/realtime-collab"
+      },
+      "featured": false
+    }
+  ],
+  "stories": [
+    {
+      "slug": "taming-runaway-rag-costs",
+      "title": "Taming Runaway RAG Costs in Production (dummy)",
+      "date": "2026-05-12",
+      "excerpt": "How we cut our retrieval bill by 70% without losing answer quality — smarter chunking, caching, and knowing when not to retrieve.",
+      "tags": ["RAG", "Cost Optimization", "LangChain"],
+      "body": [
+        "This is dummy story content. Replace it with your real professional story in data/profile.json.",
+        "When our RAG-powered support assistant went from pilot to production, the monthly bill tripled in six weeks. Nobody had changed the code — usage had simply grown, and every query was paying for embedding, retrieval, and a long context window whether it needed to or not.",
+        "The first fix was the cheapest: a semantic cache in front of the pipeline. Roughly 30% of queries were near-duplicates of something asked in the last 24 hours, and serving those from cache cost effectively nothing.",
+        "The second fix was harder but more interesting: teaching the router when NOT to retrieve. Questions like 'thanks, that worked' or 'can you rephrase that' don't need a vector search at all. A small classifier in front of the retriever cut retrieval calls by another 25%.",
+        "The lesson: RAG cost problems are usually architecture problems, not model problems. Measure where the tokens actually go before reaching for a cheaper model."
+      ]
+    },
+    {
+      "slug": "lessons-from-first-multi-agent-system",
+      "title": "Lessons From Shipping My First Multi-Agent System (dummy)",
+      "date": "2026-02-28",
+      "excerpt": "Agents that talk to each other sound great in demos. Here's what it actually took to make one reliable enough for production.",
+      "tags": ["AI Agents", "LangGraph", "Production"],
+      "body": [
+        "This is dummy story content. Replace it with your real professional story in data/profile.json.",
+        "The demo took a weekend. Production took four months. That gap is where all the real lessons about multi-agent systems live.",
+        "The biggest surprise was that the hard part wasn't the agents — it was the boundaries between them. Every hand-off between agents is a place where context gets lost, formats drift, and errors compound silently.",
+        "We ended up modeling the whole system as an explicit LangGraph state machine, with typed state at every edge and human-in-the-loop checkpoints before any irreversible action. Boring, explicit structure beat clever autonomy every time.",
+        "If I were starting again: begin with one agent and a great evaluation harness. Add a second agent only when you can prove the first one is reliable."
+      ]
+    },
+    {
+      "slug": "from-jquery-to-react-server-components",
+      "title": "From jQuery to React Server Components: A Decade of Frontend (dummy)",
+      "date": "2025-11-03",
+      "excerpt": "A personal retrospective on how frontend engineering changed, and which skills actually carried over.",
+      "tags": ["React", "Career", "Frontend"],
+      "body": [
+        "This is dummy story content. Replace it with your real professional story in data/profile.json.",
+        "My first production bug fix was a jQuery selector typo. My most recent was a React Server Component streaming issue. The tools are unrecognizable, but the debugging mindset is exactly the same.",
+        "Every frontend paradigm shift I've lived through — jQuery to Backbone, Backbone to React, classes to hooks, client rendering to server components — rewarded the same skill: understanding what the abstraction is hiding from you.",
+        "The engineers who struggled with each transition were rarely the ones who knew the old tool least. They were the ones who knew it only as incantations, without understanding the problem it solved.",
+        "So my advice to anyone anxious about the next shift, AI included: learn the problem, not just the tool. Problems are durable; tools are seasonal."
+      ]
+    }
+  ]
+}

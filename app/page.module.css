@@ -1,142 +1,117 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+.hero {
+  padding-block: 4rem 5rem;
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+.heroKicker {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  margin-bottom: 0.75rem;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+.heroName {
+  margin-bottom: 0.5rem;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
+.heroTitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--accent);
   font-weight: 500;
-  color: var(--text-primary);
+  margin-bottom: 1rem;
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+.heroTagline {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 1rem;
 }
 
-.ctas a {
+.heroBio {
+  max-width: 42rem;
+  color: var(--fg-muted);
+  margin-bottom: 2rem;
+}
+
+.heroActions {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.primaryButton {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
   font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  transition: opacity 0.15s ease;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.primaryButton:hover {
+  opacity: 0.85;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.secondaryButton {
+  display: inline-block;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  transition: border-color 0.15s ease;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.secondaryButton:hover {
+  border-color: var(--border-hover);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+.projectsGrid,
+.storiesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.contact {
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  padding: 3rem 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.contactText {
+  max-width: 34rem;
+  margin: 0.75rem auto 1.75rem;
+  color: var(--fg-muted);
+}
+
+@media (min-width: 640px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .projectsGrid,
+  .storiesGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+@media (min-width: 960px) {
+  .hero {
+    padding-block: 6rem 7rem;
   }
 
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .projectsGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

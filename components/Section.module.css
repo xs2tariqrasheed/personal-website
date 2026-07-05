@@ -1,0 +1,21 @@
+.section {
+  margin-bottom: 4.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.viewAll {
+  font-size: 0.9rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}

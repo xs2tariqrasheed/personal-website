@@ -1,0 +1,28 @@
+.wrapper {
+  text-align: center;
+  padding-block: 6rem;
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  margin-bottom: 0.75rem;
+}
+
+.text {
+  color: var(--fg-muted);
+  margin-bottom: 2rem;
+}
+
+.homeLink {
+  color: var(--accent);
+}
+
+.homeLink:hover {
+  text-decoration: underline;
+}

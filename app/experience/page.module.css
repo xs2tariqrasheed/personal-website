@@ -1,0 +1,31 @@
+.pageHeader {
+  padding-block: 3.5rem 2.5rem;
+}
+
+.pageIntro {
+  margin-top: 0.75rem;
+  max-width: 40rem;
+  color: var(--fg-muted);
+}
+
+.timeline {
+  padding-left: 0.25rem;
+  margin-bottom: 4rem;
+}
+
+.skills {
+  margin-bottom: 3rem;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

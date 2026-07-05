@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Branding Website
 
-## Getting Started
+A personal portfolio site built with [Next.js](https://nextjs.org) (App Router) — dark theme, fully static, SEO-optimized, and mobile responsive.
 
-First, run the development server:
+## Editing your content
+
+**All content lives in a single file: [`data/profile.json`](data/profile.json).** Edit it to update everything on the site — no code changes needed:
+
+- `personal` — your name, title, tagline, bio, email, location, and social links.
+  - **`siteUrl`** — set this to your real domain once you have one (it drives canonical URLs, the sitemap, Open Graph tags, and JSON-LD).
+- `skills` — skill groups shown on the home and experience pages.
+- `experience` — work history entries (`"end": null` renders as "Present").
+- `projects` — project cards (`"featured": true` shows them on the home page).
+- `stories` — professional stories; each gets its own page at `/stories/<slug>` (`body` is an array of paragraphs).
+
+The current content is dummy placeholder data — replace it with your real experience, projects, and stories.
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm dev     # start dev server at http://localhost:3000
+pnpm build   # production build
+pnpm lint    # run ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## SEO
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The site ships with:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Per-page metadata, Open Graph, and Twitter card tags (all sourced from `profile.json`)
+- JSON-LD structured data: `Person` + `WebSite` site-wide, `Article` on story pages
+- `sitemap.xml` and `robots.txt` (generated from `app/sitemap.ts` / `app/robots.ts`)
+- A generated Open Graph image (`app/opengraph-image.tsx`)
+- Semantic HTML with one `<h1>` per page
 
-## Learn More
+After deploying, submit your sitemap in [Google Search Console](https://search.google.com/search-console) to speed up indexing.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The easiest way to deploy is [Vercel](https://vercel.com/new). After deploying, set `personal.siteUrl` in `data/profile.json` to your production URL.
