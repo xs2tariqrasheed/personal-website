@@ -17,7 +17,8 @@ html {
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* clip (not hidden) so a sticky header isn't trapped in a scroll container */
+  overflow-x: clip;
 }
 
 body {
