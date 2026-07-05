@@ -17,24 +17,39 @@ export default function Home() {
 
   return (
     <div className="container">
-      <section className="pb-20 pt-16 wide:pb-28 wide:pt-24" aria-label="Introduction">
-        <p className="mb-3 font-mono text-[0.85rem] text-fg-muted">
-          {personal.location}
-        </p>
-        <h1 className="mb-2">{personal.name}</h1>
-        <p className="mb-4 text-[clamp(1.1rem,2.5vw,1.4rem)] font-medium text-accent">
-          {personal.title}
-        </p>
-        <p className="mb-4 text-[clamp(1rem,2vw,1.2rem)]">{personal.tagline}</p>
-        <p className="mb-8 max-w-[42rem] text-fg-muted">{personal.bio}</p>
-        <div className="flex flex-wrap gap-3">
-          <Link href="/projects" className={primaryButton}>
-            View my work
-          </Link>
-          <a href={`mailto:${personal.email}`} className={secondaryButton}>
-            Get in touch
-          </a>
+      <section
+        className="flex flex-col-reverse items-start gap-8 pb-20 pt-16 nav:flex-row nav:items-center nav:gap-12 wide:pb-28 wide:pt-24"
+        aria-label="Introduction"
+      >
+        <div className="flex-1">
+          <p className="mb-3 font-mono text-[0.85rem] text-fg-muted">
+            {personal.location}
+          </p>
+          <h1 className="mb-2">{personal.name}</h1>
+          <p className="mb-4 text-[clamp(1.1rem,2.5vw,1.4rem)] font-medium text-accent">
+            {personal.title}
+          </p>
+          <p className="mb-4 text-[clamp(1rem,2vw,1.2rem)]">{personal.tagline}</p>
+          <p className="mb-8 max-w-[42rem] text-fg-muted">{personal.bio}</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/projects" className={primaryButton}>
+              View my work
+            </Link>
+            <a href={`mailto:${personal.email}`} className={secondaryButton}>
+              Get in touch
+            </a>
+          </div>
         </div>
+
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          id="hero-photo"
+          src={personal.avatar}
+          alt={`Portrait of ${personal.name}`}
+          width={240}
+          height={240}
+          className="h-40 w-40 shrink-0 rounded-full border border-border object-cover shadow-lg nav:h-60 nav:w-60"
+        />
       </section>
 
       <Section id="skills" title="Skills">

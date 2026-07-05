@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { profile } from "@/lib/profile";
 
 const NAV_LINKS = [
@@ -19,14 +19,45 @@ function isActive(pathname: string, href: string): boolean {
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
+
+  // Track whether the home page's hero photo is out of view. Pages without a
+  // hero photo have no observer target, so avatar visibility falls back to the
+  // pathname check below.
+  useEffect(() => {
+    const heroPhoto = document.getElementById("hero-photo");
+    if (!heroPhoto) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setScrolledPastHero(!entry.isIntersecting),
+      { rootMargin: "-56px 0px 0px 0px" },
+    );
+    observer.observe(heroPhoto);
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  // Show the avatar once the hero photo has scrolled away, or on any page that
+  // has no hero photo to begin with.
+  const showAvatar = pathname !== "/" || scrolledPastHero;
 
   return (
     <header className="sticky top-0 z-10 border-b border-border bg-[rgba(10,10,10,0.75)] backdrop-blur-md">
       <div className="container relative flex h-15 items-center justify-between">
         <Link
           href="/"
-          className="text-base font-semibold tracking-[-0.01em] hover:text-accent"
+          className="flex items-center gap-2.5 text-base font-semibold tracking-[-0.01em] hover:text-accent"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={profile.personal.avatar}
+            alt=""
+            aria-hidden="true"
+            width={32}
+            height={32}
+            className={`h-8 rounded-full border border-border object-cover transition-all duration-300 ease-out ${
+              showAvatar ? "w-8 scale-100 opacity-100" : "w-0 scale-90 border-0 opacity-0"
+            }`}
+          />
           {profile.personal.name}
         </Link>
 

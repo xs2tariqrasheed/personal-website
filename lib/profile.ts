@@ -13,6 +13,7 @@ export interface Personal {
   shortBio: string;
   email: string;
   location: string;
+  avatar: string;
   siteUrl: string;
   resumeUrl: string | null;
   socials: Social[];
