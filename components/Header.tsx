@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 import { profile } from "@/lib/profile";
 
 const NAV_LINKS = [
@@ -41,7 +42,7 @@ export default function Header() {
   const showAvatar = pathname !== "/" || scrolledPastHero;
 
   return (
-    <header className="sticky top-0 z-10 border-b border-border bg-[rgba(10,10,10,0.75)] backdrop-blur-md">
+    <header className="sticky top-0 z-10 border-b border-border bg-header backdrop-blur-md">
       <div className="container relative flex h-15 items-center justify-between">
         <Link
           href="/"
@@ -61,22 +62,25 @@ export default function Header() {
           {profile.personal.name}
         </Link>
 
-        <button
-          type="button"
-          className="block cursor-pointer p-2 nav:hidden"
-          aria-expanded={open}
-          aria-controls="site-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span
-            className={`relative block h-0.5 w-5 rounded-[2px] bg-fg transition-all before:absolute before:-top-1.5 before:left-0 before:block before:h-0.5 before:w-5 before:rounded-[2px] before:bg-fg before:transition-transform before:content-[''] after:absolute after:left-0 after:top-1.5 after:block after:h-0.5 after:w-5 after:rounded-[2px] after:bg-fg after:transition-transform after:content-[''] ${
-              open
-                ? "bg-transparent before:translate-y-1.5 before:rotate-45 after:-translate-y-1.5 after:-rotate-45"
-                : ""
-            }`}
-          />
-        </button>
+        <div className="flex items-center gap-2 nav:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="block cursor-pointer p-2"
+            aria-expanded={open}
+            aria-controls="site-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span
+              className={`relative block h-0.5 w-5 rounded-[2px] bg-fg transition-all before:absolute before:-top-1.5 before:left-0 before:block before:h-0.5 before:w-5 before:rounded-[2px] before:bg-fg before:transition-transform before:content-[''] after:absolute after:left-0 after:top-1.5 after:block after:h-0.5 after:w-5 after:rounded-[2px] after:bg-fg after:transition-transform after:content-[''] ${
+                open
+                  ? "bg-transparent before:translate-y-1.5 before:rotate-45 after:-translate-y-1.5 after:-rotate-45"
+                  : ""
+              }`}
+            />
+          </button>
+        </div>
 
         <nav
           id="site-nav"
@@ -97,6 +101,10 @@ export default function Header() {
             </Link>
           ))}
         </nav>
+
+        <div className="hidden nav:block">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
