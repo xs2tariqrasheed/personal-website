@@ -1,0 +1,50 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 128px;
+  border: 1px solid var(--header-border);
+  background: var(--header-button-bg);
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.toggle:hover {
+  background: var(--header-button-hover);
+}
+
+.toggle:active {
+  transform: scale(0.97);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .toggle {
+    height: 36px;
+    padding: 0 12px;
+  }
+
+  .label {
+    display: none;
+  }
+}

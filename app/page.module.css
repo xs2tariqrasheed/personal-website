@@ -123,12 +123,30 @@ a.secondary {
   }
 }
 
+/* Explicit dark theme selected by the user. */
+:global(:root[data-theme="dark"]) .logo {
+  filter: invert();
+}
+
+:global(:root[data-theme="dark"]) .page {
+  --background: #000;
+  --foreground: #000;
+
+  --text-primary: #ededed;
+  --text-secondary: #999;
+
+  --button-primary-hover: #ccc;
+  --button-secondary-hover: #1a1a1a;
+  --button-secondary-border: #1a1a1a;
+}
+
+/* Fall back to the OS preference until the user picks a theme. */
 @media (prefers-color-scheme: dark) {
-  .logo {
+  :global(:root:not([data-theme])) .logo {
     filter: invert();
   }
 
-  .page {
+  :global(:root:not([data-theme])) .page {
     --background: #000;
     --foreground: #000;
 
