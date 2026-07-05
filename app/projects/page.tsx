@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ProjectCard from "@/components/ProjectCard";
 import { profile } from "@/lib/profile";
-import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -14,14 +13,14 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div className="container">
-      <header className={styles.pageHeader}>
+      <header className="pb-10 pt-14">
         <h1>Projects</h1>
-        <p className={styles.pageIntro}>
+        <p className="mt-3 max-w-[40rem] text-fg-muted">
           A selection of things I&apos;ve built — from AI agent frameworks to
           production web apps.
         </p>
       </header>
-      <div className={styles.grid}>
+      <div className="mb-12 grid grid-cols-1 gap-5 sm:grid-cols-2 wide:grid-cols-3">
         {profile.projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
