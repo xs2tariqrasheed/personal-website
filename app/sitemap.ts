@@ -7,6 +7,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/projects"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/experience"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/stories"), changeFrequency: "weekly", priority: 0.8 },
+    {
+      url: absoluteUrl("/publications"),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 
   const storyRoutes: MetadataRoute.Sitemap = profile.stories.map((story) => ({

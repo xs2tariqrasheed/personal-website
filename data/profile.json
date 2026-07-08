@@ -186,5 +186,49 @@
         "So my advice to anyone anxious about the next shift, AI included: learn the problem, not just the tool. Problems are durable; tools are seasonal."
       ]
     }
+  ],
+  "publications": [
+    {
+      "title": "Why We Rewrote Our Agent Loop as a State Machine (dummy)",
+      "description": "A breakdown of how modeling agent control flow explicitly made our multi-agent system debuggable and safe for production.",
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/your-username",
+      "date": "2026-06-18"
+    },
+    {
+      "title": "The Hidden Cost of Every RAG Query (dummy)",
+      "description": "Most RAG bills are architecture problems in disguise. Here's how to find where your tokens actually go.",
+      "platform": "Medium",
+      "url": "https://medium.com/@your-username",
+      "date": "2026-03-02"
+    },
+    {
+      "title": "Shipping LLM Features Without Losing Your Mind (dummy)",
+      "description": "Practical patterns for evaluation harnesses, guardrails, and rollout that kept our AI features reliable.",
+      "platform": "Dev.to",
+      "url": "https://dev.to/your-username",
+      "date": "2025-10-21"
+    },
+    {
+      "title": "From Prototype to Production: A LangGraph Retrospective (dummy)",
+      "description": "The demo took a weekend; production took four months. A candid look at what the gap was made of.",
+      "platform": "Hashnode",
+      "url": "https://hashnode.com/@your-username",
+      "date": "2025-05-09"
+    },
+    {
+      "title": "A Field Guide to Vector Databases in 2024 (dummy)",
+      "description": "Comparing retrieval strategies, index types, and when a plain SQL LIKE is genuinely good enough.",
+      "platform": "Medium",
+      "url": "https://medium.com/@your-username",
+      "date": "2024-11-14"
+    },
+    {
+      "title": "What a Decade of Frontend Taught Me About AI Hype (dummy)",
+      "description": "Every paradigm shift rewards the same skill: understanding what the abstraction is hiding from you.",
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/your-username",
+      "date": "2024-04-30"
+    }
   ]
 }

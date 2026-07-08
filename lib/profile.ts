@@ -56,12 +56,21 @@ export interface Story {
   body: string[];
 }
 
+export interface Publication {
+  title: string;
+  description: string;
+  platform: string;
+  url: string;
+  date: string;
+}
+
 export interface Profile {
   personal: Personal;
   skills: SkillGroup[];
   experience: ExperienceEntry[];
   projects: Project[];
   stories: Story[];
+  publications: Publication[];
 }
 
 export const profile = profileJson as Profile;
@@ -72,6 +81,27 @@ export function getStories(): Story[] {
 
 export function getStoryBySlug(slug: string): Story | undefined {
   return profile.stories.find((story) => story.slug === slug);
+}
+
+export interface PublicationYearGroup {
+  year: number;
+  items: Publication[];
+}
+
+export function getPublicationsByYear(): PublicationYearGroup[] {
+  const sorted = [...profile.publications].sort((a, b) =>
+    b.date.localeCompare(a.date),
+  );
+  const groups = new Map<number, Publication[]>();
+  for (const pub of sorted) {
+    const year = Number(pub.date.slice(0, 4));
+    const list = groups.get(year) ?? [];
+    list.push(pub);
+    groups.set(year, list);
+  }
+  return [...groups.entries()]
+    .sort((a, b) => b[0] - a[0])
+    .map(([year, items]) => ({ year, items }));
 }
 
 export function absoluteUrl(path: string): string {

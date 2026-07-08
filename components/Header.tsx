@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import SocialLinks from "@/components/SocialLinks";
 import ThemeToggle from "@/components/ThemeToggle";
 import { profile } from "@/lib/profile";
 
@@ -11,6 +12,7 @@ const NAV_LINKS = [
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
   { href: "/stories", label: "Stories" },
+  { href: "/publications", label: "Publications" },
 ];
 
 function isActive(pathname: string, href: string): boolean {
@@ -100,9 +102,13 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          {/* Socials live in the mobile menu below the links; on desktop they
+              move to the right group, so hide this copy above the nav bp. */}
+          <SocialLinks className="mt-2 border-t border-border pt-3 nav:hidden" />
         </nav>
 
-        <div className="hidden nav:block">
+        <div className="hidden items-center gap-1 nav:flex">
+          <SocialLinks />
           <ThemeToggle />
         </div>
       </div>
