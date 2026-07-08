@@ -8,25 +8,12 @@ export default function Footer() {
         <p className="text-[0.85rem] text-fg-muted">
           © {new Date().getFullYear()} {personal.name}
         </p>
-        <div className="flex flex-wrap gap-5">
-          {personal.socials.map((social) => (
-            <a
-              key={social.url}
-              href={social.url}
-              target="_blank"
-              rel="me noopener"
-              className="text-[0.85rem] text-fg-muted transition-colors hover:text-fg"
-            >
-              {social.label}
-            </a>
-          ))}
-          <a
-            href={`mailto:${personal.email}`}
-            className="text-[0.85rem] text-fg-muted transition-colors hover:text-fg"
-          >
-            Email
-          </a>
-        </div>
+        <a
+          href={`mailto:${personal.email}`}
+          className="text-[0.85rem] text-fg-muted transition-colors hover:text-fg"
+        >
+          {personal.email}
+        </a>
       </div>
     </footer>
   );
